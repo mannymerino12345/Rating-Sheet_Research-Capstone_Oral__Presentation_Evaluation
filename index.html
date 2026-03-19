@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research/Capstone Oral Presentation Form</title>
+  <style>
+    :root {
+      --dark: #222;
+      --line: #333;
+      --light: #f7f7f7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Times New Roman", serif;
+      color: var(--dark);
+      background: #ffffff;
+    }
+
+    .toolbar {
+      width: 1400px;
+      max-width: 100%;
+      margin: 0 auto 16px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 10px 14px;
+      border: 1px solid #bbb;
+      background: rgb(1, 198, 252);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background: #f3f3f3;
+    }
+
+    .status {
+      width: 1400px;
+      max-width: 100%;
+      margin: 0 auto 12px;
+      font-size: 14px;
+      min-height: 18px;
+      font-weight: bold;
+    }
+
+    .page {
+      width: 1400px;
+      max-width: 100%;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+      padding: 22px 24px 30px;
+      background: #fff;
+    }
+
+    .header-image {
+      width: 100%;
+      display: block;
+    }
+
+    .footer-image {
+      width: 25%;
+      display: block;
+    }
+
+    .header-wrap {
+      margin-bottom: 16px;
+    }
+
+    .footer-wrap {
+      margin-top: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      margin: 20px 0 20px;
+      letter-spacing: 0.4px;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      margin-top: -6px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .info-row {
+      margin: 8px 0;
+      font-size: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: center;
+    }
+
+    .input-line {
+      border: none;
+      border-bottom: 1px solid #000;
+      min-width: 120px;
+      font: inherit;
+      background: transparent;
+      outline: none;
+      padding: 2px 4px;
+      display: inline-block;
+      min-height: 24px;
+    }
+
+    .input-line.medium {
+      min-width: 180px;
+    }
+
+    .input-line.long {
+      min-width: 520px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .section-label {
+      margin: 18px 0 8px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 8px 6px;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    th {
+      background: var(--light);
+    }
+
+    td.left {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    td.member-name {
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    input[type="number"] {
+      width: 70px;
+      padding: 4px;
+      font: inherit;
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      font: inherit;
+      padding: 10px;
+      border: 1px solid #aaa;
+      resize: vertical;
+    }
+
+    .display-box {
+      border: 1px solid #aaa;
+      min-height: 120px;
+      font: inherit;
+      padding: 10px;
+      white-space: pre-wrap;
+      text-align: left;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+
+    .rates-table th,
+    .rates-table td {
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .rates-table td.wrap {
+      white-space: normal;
+      min-width: 220px;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+      }
+
+      .toolbar,
+      .status {
+        display: none;
+      }
+
+      .page {
+        width: 100%;
+        border: none;
+        padding: 12px 18px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" id="formToolbar">
+    <button type="button" onclick="window.print()">Print Form</button>
+    <button type="button" onclick="fillSample()">Fill Sample Data</button>
+    <button type="button" onclick="clearForm()">Clear Form</button>
+    <button type="button" onclick="goToViewAllRates()">View All Rates</button>
+  </div>
+
+  <div class="toolbar hidden" id="ratesToolbar">
+    <button type="button" onclick="goToFormPage()">Back to Form</button>
+    <button type="button" onclick="loadAllRates(true)">Refresh Rates</button>
+  </div>
+
+  <div class="toolbar hidden" id="detailsToolbar">
+    <button type="button" onclick="goToViewAllRates()">Back to All Rates</button>
+    <button type="button" onclick="window.print()">Print Details</button>
+  </div>
+
+  <div class="page" id="formPage">
+    <div class="header-wrap">
+      <img src="header.png" alt="Header" class="header-image" />
+    </div>
+
+    <h1>RESEARCH/CAPSTONE ORAL PRESENTATION FORM</h1>
+
+    <div class="info-row">
+      <label>Evaluator: <input class="input-line medium" id="evaluator" type="text" required /></label>
+      <label>Time: <input class="input-line" id="time" type="text" readonly required /></label>
+      <label>Date: <input class="input-line" id="date" type="date" readonly required /></label>
+      <label>Signature: <input class="input-line" id="signature" type="text" required /></label>
+    </div>
+
+    <div class="info-row">
+      <label style="width:100%;">Research/Capstone Project Proposal Title:
+        <input class="input-line long" id="title" type="text" required />
+      </label>
+    </div>
+
+    <div class="section-label">Group Members Name</div>
+
+    <table id="evaluationTable">
+      <thead>
+        <tr>
+          <th style="width: 24%;">Items Evaluated</th>
+          <th>Cristian Keneth Costorio</th>
+          <th>Manny Merino</th>
+          <th>Adrian Bernales</th>
+          <th>Ronalyn Pitogo</th>
+          <th>Josephine Bedon</th>
+          <th>Sherie Pearl De Paz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="left"><strong>Member Names</strong></td>
+          <td class="member-name">Cristian Keneth Costorio</td>
+          <td class="member-name">Manny Merino</td>
+          <td class="member-name">Adrian Bernales</td>
+          <td class="member-name">Ronalyn Pitogo</td>
+          <td class="member-name">Josephine Bedon</td>
+          <td class="member-name">Sherie Pearl De Paz</td>
+        </tr>
+
+        <tr>
+          <td class="left">Overall organization (1 – 20)</td>
+          <td><input id="overallOrganization1" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization2" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization3" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization4" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization5" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization6" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+        </tr>
+
+        <tr>
+          <td class="left">Preparedness (1 – 15)</td>
+          <td><input id="preparedness1" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness2" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness3" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness4" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness5" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness6" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+        </tr>
+
+        <tr>
+          <td class="left">Visual aids quality/effect (1 – 15)</td>
+          <td><input id="visualAids1" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids2" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids3" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids4" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids5" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids6" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+        </tr>
+
+        <tr>
+          <td class="left">Technical content (1 – 15)</td>
+          <td><input id="technicalContent1" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent2" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent3" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent4" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent5" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent6" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+        </tr>
+
+        <tr>
+          <td class="left">Delivery (1 – 15)</td>
+          <td><input id="delivery1" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery2" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery3" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery4" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery5" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery6" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+        </tr>
+
+        <tr>
+          <td class="left">Handling of questions (1 – 10)</td>
+          <td><input id="handlingQuestions1" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions2" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions3" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions4" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions5" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions6" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+        </tr>
+
+        <tr>
+          <td class="left">Effective use of time (1 – 10)</td>
+          <td><input id="effectiveTime1" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime2" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime3" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime4" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime5" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime6" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+        </tr>
+
+        <tr>
+          <td class="left"><strong>Total Individual Score</strong></td>
+          <td id="totalMember1">0</td>
+          <td id="totalMember2">0</td>
+          <td id="totalMember3">0</td>
+          <td id="totalMember4">0</td>
+          <td id="totalMember5">0</td>
+          <td id="totalMember6">0</td>
+        </tr>
+
+        <tr>
+          <td class="left"><strong>Overall Group Score</strong></td>
+          <td colspan="6" id="overallGroupScore">0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-label">General Comments</div>
+    <textarea id="generalComments" required></textarea>
+
+    <div style="margin-top: 16px; text-align:center;">
+      <div class="status" id="status"></div>
+      <button
+        type="button"
+        onclick="submitToGoogleSheet()"
+        style="background-color: #4CAF50; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer;"
+      >
+        SAVE DATA
+      </button>
+    </div>
+
+    <div class="footer-wrap">
+      <img src="footer.png" alt="Footer" class="footer-image" />
+    </div>
+  </div>
+
+  <div class="page hidden" id="ratesPage">
+    <div class="header-wrap">
+      <img src="header.png" alt="Header" class="header-image" />
+    </div>
+
+    <h1>ALL ORAL PRESENTATION EVALUATIONS</h1>
+    <div class="page-subtitle">Saved Data</div>
+
+    <div class="table-wrap">
+      <table class="rates-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Evaluator</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>Signature</th>
+            <th>Title</th>
+            <th>Overall Group Score</th>
+            <th>Created At</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="ratesTableBody">
+          <tr>
+            <td colspan="9" class="center">No data loaded yet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer-wrap">
+      <img src="footer.png" alt="Footer" class="footer-image" />
+    </div>
+  </div>
+
+  <div class="page hidden" id="detailsPage">
+    <div class="header-wrap">
+      <img src="header.png" alt="Header" class="header-image" />
+    </div>
+
+    <h1>RESEARCH/CAPSTONE ORAL PRESENTATION FORM</h1>
+
+    <div class="info-row">
+      <label>Evaluator: <span class="input-line medium" id="detailEvaluator"></span></label>
+      <label>Time: <span class="input-line" id="detailTime"></span></label>
+      <label>Date: <span class="input-line" id="detailDate"></span></label>
+      <label>Signature: <span class="input-line" id="detailSignature"></span></label>
+    </div>
+
+    <div class="info-row">
+      <label style="width:100%;">Research/Capstone Project Proposal Title:
+        <span class="input-line long" id="detailTitle"></span>
+      </label>
+    </div>
+
+    <div class="section-label">Group Members Name</div>
+
+    <table id="detailsEvaluationTable">
+      <thead>
+        <tr>
+          <th style="width: 24%;">Items Evaluated</th>
+          <th>Cristian Keneth Costorio</th>
+          <th>Manny Merino</th>
+          <th>Adrian Bernales</th>
+          <th>Ronalyn Pitogo</th>
+          <th>Josephine Bedon</th>
+          <th>Sherie Pearl De Paz</th>
+        </tr>
+      </thead>
+      <tbody id="detailsScoresBody"></tbody>
+    </table>
+
+    <div class="section-label">General Comments</div>
+    <div class="display-box" id="detailGeneralComments"></div>
+
+    <div class="footer-wrap">
+      <img src="footer.png" alt="Footer" class="footer-image" />
+    </div>
+  </div>
+
+  <script>
+    const GOOGLE_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwq7urmhOmsOEtOXPUMWJCortUhlAtVZ2tLaVrs74f0_bcwRg_tFDTQUUjl29_3yZs/exec";
+
+    const fixedMembers = [
+      "Cristian Keneth Costorio",
+      "Manny Merino",
+      "Adrian Bernales",
+      "Ronalyn Pitogo",
+      "Josephine Bedon",
+      "Sherie Pearl De Paz"
+    ];
+
+    // Performance optimization only, no feature/logic removal
+    let allRatesCache = [];
+    let allRatesCacheTime = 0;
+    let allRatesRequestPromise = null;
+    const ALL_RATES_CACHE_TTL = 30000;
+
+    function formatCurrentTime() {
+      const now = new Date();
+      return now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true
+      });
+    }
+
+    function formatCurrentDate() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, "0");
+      const day = String(now.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+
+    function autoFillDateTime() {
+      document.getElementById("time").value = formatCurrentTime();
+      document.getElementById("date").value = formatCurrentDate();
+    }
+
+    function clampNumberInput(input) {
+      if (!input) return;
+      if (input.value === "") return;
+
+      let value = Number(input.value);
+      const min = input.min !== "" ? Number(input.min) : null;
+      const max = input.max !== "" ? Number(input.max) : null;
+
+      if (Number.isNaN(value)) {
+        input.value = "";
+        return;
+      }
+
+      if (min !== null && value < min) value = min;
+      if (max !== null && value > max) value = max;
+
+      input.value = value;
+    }
+
+    function handleScoreInput(input) {
+      clampNumberInput(input);
+      updateTotals();
+    }
+
+    function num(id) {
+      return Number(document.getElementById(id).value || 0);
+    }
+
+    function memberTotal(index) {
+      return (
+        num(`overallOrganization${index}`) +
+        num(`preparedness${index}`) +
+        num(`visualAids${index}`) +
+        num(`technicalContent${index}`) +
+        num(`delivery${index}`) +
+        num(`handlingQuestions${index}`) +
+        num(`effectiveTime${index}`)
+      );
+    }
+
+    function updateTotals() {
+      let grandTotal = 0;
+
+      for (let i = 1; i <= 6; i++) {
+        const total = memberTotal(i);
+        document.getElementById(`totalMember${i}`).textContent = total;
+        grandTotal += total;
+      }
+
+      const overallAverage = (grandTotal / 6).toFixed(2);
+      document.getElementById("overallGroupScore").textContent = overallAverage;
+    }
+
+    function getGroupMembersJson() {
+      return JSON.stringify({
+        member1: fixedMembers[0],
+        member2: fixedMembers[1],
+        member3: fixedMembers[2],
+        member4: fixedMembers[3],
+        member5: fixedMembers[4],
+        member6: fixedMembers[5]
+      });
+    }
+
+    function getScoresJson() {
+      return JSON.stringify({
+        overallOrganization: {
+          member1: num("overallOrganization1"),
+          member2: num("overallOrganization2"),
+          member3: num("overallOrganization3"),
+          member4: num("overallOrganization4"),
+          member5: num("overallOrganization5"),
+          member6: num("overallOrganization6")
+        },
+        preparedness: {
+          member1: num("preparedness1"),
+          member2: num("preparedness2"),
+          member3: num("preparedness3"),
+          member4: num("preparedness4"),
+          member5: num("preparedness5"),
+          member6: num("preparedness6")
+        },
+        visualAids: {
+          member1: num("visualAids1"),
+          member2: num("visualAids2"),
+          member3: num("visualAids3"),
+          member4: num("visualAids4"),
+          member5: num("visualAids5"),
+          member6: num("visualAids6")
+        },
+        technicalContent: {
+          member1: num("technicalContent1"),
+          member2: num("technicalContent2"),
+          member3: num("technicalContent3"),
+          member4: num("technicalContent4"),
+          member5: num("technicalContent5"),
+          member6: num("technicalContent6")
+        },
+        delivery: {
+          member1: num("delivery1"),
+          member2: num("delivery2"),
+          member3: num("delivery3"),
+          member4: num("delivery4"),
+          member5: num("delivery5"),
+          member6: num("delivery6")
+        },
+        handlingQuestions: {
+          member1: num("handlingQuestions1"),
+          member2: num("handlingQuestions2"),
+          member3: num("handlingQuestions3"),
+          member4: num("handlingQuestions4"),
+          member5: num("handlingQuestions5"),
+          member6: num("handlingQuestions6")
+        },
+        effectiveTime: {
+          member1: num("effectiveTime1"),
+          member2: num("effectiveTime2"),
+          member3: num("effectiveTime3"),
+          member4: num("effectiveTime4"),
+          member5: num("effectiveTime5"),
+          member6: num("effectiveTime6")
+        },
+        totalIndividualScore: {
+          member1: Number(document.getElementById("totalMember1").textContent || 0),
+          member2: Number(document.getElementById("totalMember2").textContent || 0),
+          member3: Number(document.getElementById("totalMember3").textContent || 0),
+          member4: Number(document.getElementById("totalMember4").textContent || 0),
+          member5: Number(document.getElementById("totalMember5").textContent || 0),
+          member6: Number(document.getElementById("totalMember6").textContent || 0)
+        }
+      });
+    }
+
+    function getFormPayload() {
+      return {
+        evaluator: document.getElementById("evaluator").value.trim(),
+        time: document.getElementById("time").value.trim(),
+        date: document.getElementById("date").value,
+        signature: document.getElementById("signature").value.trim(),
+        title: document.getElementById("title").value.trim(),
+        groupMembersJson: getGroupMembersJson(),
+        scoresJson: getScoresJson(),
+        overallGroupScore: Number(document.getElementById("overallGroupScore").textContent || 0),
+        generalComments: document.getElementById("generalComments").value.trim(),
+        createdAt: new Date().toISOString()
+      };
+    }
+
+    function validateForm() {
+      const missingFields = [];
+
+      if (!document.getElementById("evaluator").value.trim()) missingFields.push("Evaluator");
+      if (!document.getElementById("time").value.trim()) missingFields.push("Time");
+      if (!document.getElementById("date").value.trim()) missingFields.push("Date");
+      if (!document.getElementById("signature").value.trim()) missingFields.push("Signature");
+      if (!document.getElementById("title").value.trim()) missingFields.push("Research/Capstone Project Proposal Title");
+      if (!document.getElementById("generalComments").value.trim()) missingFields.push("General Comments");
+
+      const fields = [
+        "overallOrganization",
+        "preparedness",
+        "visualAids",
+        "technicalContent",
+        "delivery",
+        "handlingQuestions",
+        "effectiveTime"
+      ];
+
+      fields.forEach(field => {
+        for (let i = 1; i <= 6; i++) {
+          const input = document.getElementById(`${field}${i}`);
+          if (!input.value.trim()) {
+            missingFields.push(`${field}${i}`);
+          }
+        }
+      });
+
+      return {
+        valid: missingFields.length === 0,
+        missingFields
+      };
+    }
+
+    async function fetchWithTimeout(url, options = {}, timeout = 10000) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeout);
+
+      try {
+        const response = await fetch(url, {
+          ...options,
+          signal: controller.signal,
+          cache: "no-store"
+        });
+        return response;
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    async function fetchAllRates(forceRefresh = false) {
+      const now = Date.now();
+
+      if (!forceRefresh && allRatesCache.length && (now - allRatesCacheTime < ALL_RATES_CACHE_TTL)) {
+        return allRatesCache;
+      }
+
+      if (!forceRefresh && allRatesRequestPromise) {
+        return allRatesRequestPromise;
+      }
+
+      allRatesRequestPromise = (async () => {
+        const response = await fetchWithTimeout(
+          `${GOOGLE_SCRIPT_WEB_APP_URL}?action=getAllRates`,
+          { method: "GET" },
+          15000
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Unable to load rates.");
+        }
+
+        const rows = Array.isArray(result.data) ? result.data : [];
+        allRatesCache = rows;
+        allRatesCacheTime = Date.now();
+        return rows;
+      })();
+
+      try {
+        return await allRatesRequestPromise;
+      } finally {
+        allRatesRequestPromise = null;
+      }
+    }
+
+    async function submitToGoogleSheet() {
+      const status = document.getElementById("status");
+      const validation = validateForm();
+
+      if (!validation.valid) {
+        status.style.color = "red";
+        status.textContent = "Cannot save. Missing required input(s): " + validation.missingFields.join(", ");
+        return;
+      }
+
+      const payload = getFormPayload();
+      status.style.color = "black";
+      status.textContent = "Saving Data...";
+
+      try {
+        const response = await fetchWithTimeout(GOOGLE_SCRIPT_WEB_APP_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload),
+          keepalive: true
+        }, 15000);
+
+        const text = await response.text();
+        let result = null;
+
+        try {
+          result = JSON.parse(text);
+        } catch (e) {}
+
+        if (response.ok && result && result.success) {
+          status.style.color = "green";
+          status.textContent = "Successfully saved Data.";
+
+          allRatesCache = [];
+          allRatesCacheTime = 0;
+        } else {
+          status.style.color = "red";
+          status.textContent = "Failed to save: " + (result?.message || text || "Unknown error");
+        }
+      } catch (error) {
+        status.style.color = "red";
+        status.textContent = `Error: ${error.name === "AbortError" ? "Request timeout." : error.message}`;
+      }
+    }
+
+    function clearForm() {
+      document.getElementById("evaluator").value = "";
+      document.getElementById("signature").value = "";
+      document.getElementById("title").value = "";
+      document.getElementById("generalComments").value = "";
+      document.getElementById("status").textContent = "";
+      document.getElementById("status").style.color = "";
+
+      const fields = [
+        "overallOrganization",
+        "preparedness",
+        "visualAids",
+        "technicalContent",
+        "delivery",
+        "handlingQuestions",
+        "effectiveTime"
+      ];
+
+      fields.forEach(field => {
+        for (let i = 1; i <= 6; i++) {
+          document.getElementById(`${field}${i}`).value = "";
+        }
+      });
+
+      autoFillDateTime();
+      updateTotals();
+    }
+
+    function fillSample() {
+      document.getElementById("evaluator").value = "Dr. Juan Dela Cruz";
+      document.getElementById("signature").value = "Signed";
+      document.getElementById("title").value = "Smart Attendance Monitoring System";
+      document.getElementById("generalComments").value = "Good presentation with clear organization.";
+      autoFillDateTime();
+
+      const sampleValues = {
+        overallOrganization: [18, 17, 19, 18, 17, 18],
+        preparedness: [14, 13, 14, 15, 13, 14],
+        visualAids: [14, 13, 14, 15, 13, 14],
+        technicalContent: [14, 13, 14, 15, 13, 14],
+        delivery: [13, 12, 14, 14, 13, 14],
+        handlingQuestions: [9, 8, 9, 10, 8, 9],
+        effectiveTime: [9, 8, 9, 10, 8, 9]
+      };
+
+      Object.entries(sampleValues).forEach(([field, arr]) => {
+        arr.forEach((value, index) => {
+          const input = document.getElementById(`${field}${index + 1}`);
+          input.value = value;
+          clampNumberInput(input);
+        });
+      });
+
+      updateTotals();
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function showFormPage() {
+      document.getElementById("formPage").classList.remove("hidden");
+      document.getElementById("formToolbar").classList.remove("hidden");
+      document.getElementById("ratesPage").classList.add("hidden");
+      document.getElementById("ratesToolbar").classList.add("hidden");
+      document.getElementById("detailsPage").classList.add("hidden");
+      document.getElementById("detailsToolbar").classList.add("hidden");
+    }
+
+    function showRatesPage() {
+      document.getElementById("formPage").classList.add("hidden");
+      document.getElementById("formToolbar").classList.add("hidden");
+      document.getElementById("ratesPage").classList.remove("hidden");
+      document.getElementById("ratesToolbar").classList.remove("hidden");
+      document.getElementById("detailsPage").classList.add("hidden");
+      document.getElementById("detailsToolbar").classList.add("hidden");
+    }
+
+    function showDetailsPage() {
+      document.getElementById("formPage").classList.add("hidden");
+      document.getElementById("formToolbar").classList.add("hidden");
+      document.getElementById("ratesPage").classList.add("hidden");
+      document.getElementById("ratesToolbar").classList.add("hidden");
+      document.getElementById("detailsPage").classList.remove("hidden");
+      document.getElementById("detailsToolbar").classList.remove("hidden");
+    }
+
+    function goToViewAllRates() {
+      showRatesPage();
+      loadAllRates();
+    }
+
+    function goToFormPage() {
+      showFormPage();
+    }
+
+    async function loadAllRates(forceRefresh = false) {
+      const status = document.getElementById("status");
+      const tbody = document.getElementById("ratesTableBody");
+      status.style.color = "black";
+      status.textContent = "Loading all rates...";
+      tbody.innerHTML = '<tr><td colspan="9" class="center">Loading...</td></tr>';
+
+      try {
+        const rows = await fetchAllRates(forceRefresh);
+
+        if (!rows.length) {
+          tbody.innerHTML = '<tr><td colspan="9" class="center">No saved evaluations found.</td></tr>';
+          status.textContent = "No saved evaluations found.";
+          return;
+        }
+
+        tbody.innerHTML = rows.map((row, index) => `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${escapeHtml(row.evaluator)}</td>
+            <td>${escapeHtml(row.time)}</td>
+            <td>${escapeHtml(row.date)}</td>
+            <td>${escapeHtml(row.signature)}</td>
+            <td class="wrap">${escapeHtml(row.title)}</td>
+            <td>${escapeHtml(row.overallGroupScore)}</td>
+            <td>${escapeHtml(row.createdAt)}</td>
+            <td><button type="button" onclick="viewDetails(${index})">View</button></td>
+          </tr>
+        `).join("");
+
+        status.style.color = "green";
+        status.textContent = `Loaded ${rows.length} saved evaluation(s).`;
+      } catch (error) {
+        tbody.innerHTML = `<tr><td colspan="9" class="center">${escapeHtml(error.message)}</td></tr>`;
+        status.style.color = "red";
+        status.textContent = `Error: ${error.name === "AbortError" ? "Request timeout." : error.message}`;
+      }
+    }
+
+    function parseSafeJson(value, fallback = {}) {
+      try {
+        if (!value) return fallback;
+        return typeof value === "string" ? JSON.parse(value) : value;
+      } catch (error) {
+        return fallback;
+      }
+    }
+
+    function buildDetailsTable(row) {
+      const scores = parseSafeJson(row.scoresJson, {});
+      const memberKeys = ["member1", "member2", "member3", "member4", "member5", "member6"];
+
+      const rows = [
+        ["Member Names", {
+          member1: fixedMembers[0],
+          member2: fixedMembers[1],
+          member3: fixedMembers[2],
+          member4: fixedMembers[3],
+          member5: fixedMembers[4],
+          member6: fixedMembers[5]
+        }, true],
+        ["Overall organization (1 – 20)", scores.overallOrganization || {}],
+        ["Preparedness (1 – 15)", scores.preparedness || {}],
+        ["Visual aids quality/effect (1 – 15)", scores.visualAids || {}],
+        ["Technical content (1 – 15)", scores.technicalContent || {}],
+        ["Delivery (1 – 15)", scores.delivery || {}],
+        ["Handling of questions (1 – 10)", scores.handlingQuestions || {}],
+        ["Effective use of time (1 – 10)", scores.effectiveTime || {}],
+        ["Total Individual Score", scores.totalIndividualScore || {}]
+      ];
+
+      const body = document.getElementById("detailsScoresBody");
+
+      body.innerHTML = rows.map(([label, values, isNames]) => `
+        <tr>
+          <td class="left"><strong>${escapeHtml(label)}</strong></td>
+          ${memberKeys.map(key => `<td class="${isNames ? "member-name" : ""}">${escapeHtml(values[key] ?? "")}</td>`).join("")}
+        </tr>
+      `).join("") + `
+        <tr>
+          <td class="left"><strong>Overall Group Score</strong></td>
+          <td colspan="6">${escapeHtml(row.overallGroupScore)}</td>
+        </tr>
+      `;
+    }
+
+    function fillDetailsPage(row) {
+      document.getElementById("detailEvaluator").textContent = row.evaluator || "";
+      document.getElementById("detailTime").textContent = row.time || "";
+      document.getElementById("detailDate").textContent = row.date || "";
+      document.getElementById("detailSignature").textContent = row.signature || "";
+      document.getElementById("detailTitle").textContent = row.title || "";
+      document.getElementById("detailGeneralComments").textContent = row.generalComments || "";
+      buildDetailsTable(row);
+    }
+
+    async function viewDetails(index) {
+      const status = document.getElementById("status");
+      status.style.color = "black";
+      status.textContent = "Loading evaluation details...";
+
+      try {
+        let rows = allRatesCache;
+
+        if (!rows.length) {
+          rows = await fetchAllRates(false);
+        }
+
+        const row = rows[index];
+
+        if (!row) {
+          throw new Error("Evaluation details not found.");
+        }
+
+        fillDetailsPage(row);
+        showDetailsPage();
+        status.style.color = "green";
+        status.textContent = `Viewing saved evaluation #${index + 1}.`;
+      } catch (error) {
+        status.style.color = "red";
+        status.textContent = `Error: ${error.name === "AbortError" ? "Request timeout." : error.message}`;
+      }
+    }
+
+    autoFillDateTime();
+    updateTotals();
+  </script>
+</body>
+</html>
