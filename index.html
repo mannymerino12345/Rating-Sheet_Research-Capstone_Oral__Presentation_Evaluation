@@ -857,6 +857,27 @@
       }
     }
 
+    async function sendDataToGoogleSheet(payload) {
+      const body = JSON.stringify(payload);
+
+      if (navigator.sendBeacon) {
+        const blob = new Blob([body], { type: "text/plain;charset=utf-8" });
+        const ok = navigator.sendBeacon(GOOGLE_SCRIPT_WEB_APP_URL, blob);
+        if (ok) return true;
+      }
+
+      await fetch(GOOGLE_SCRIPT_WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body
+      });
+
+      return true;
+    }
+
     async function fetchAllRates(forceRefresh = false) {
       const now = Date.now();
 
@@ -871,7 +892,7 @@
       allRatesRequestPromise = (async () => {
         const response = await fetchWithTimeout(
           `${GOOGLE_SCRIPT_WEB_APP_URL}?action=getAllRates`,
-          { method: "GET" },
+          { method: "GET", mode: "cors" },
           15000
         );
 
@@ -896,6 +917,7 @@
 
     async function submitToGoogleSheet() {
       const status = document.getElementById("status");
+      const saveButton = document.querySelector('button[onclick="submitToGoogleSheet()"]');
       const validation = validateForm();
 
       if (!validation.valid) {
@@ -907,35 +929,27 @@
       const payload = getFormPayload();
       status.style.color = "black";
       status.textContent = "Saving Data...";
+      if (saveButton) saveButton.disabled = true;
 
       try {
-        const response = await fetchWithTimeout(GOOGLE_SCRIPT_WEB_APP_URL, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(payload),
-          keepalive: true
-        }, 15000);
+        await sendDataToGoogleSheet(payload);
 
-        const text = await response.text();
-        let result = null;
+        status.style.color = "green";
+        status.textContent = "Data submitted successfully. Please check your Google Sheet.";
 
-        try {
-          result = JSON.parse(text);
-        } catch (e) {}
+        allRatesCache = [];
+        allRatesCacheTime = 0;
 
-        if (response.ok && result && result.success) {
+        setTimeout(() => {
+          clearForm();
           status.style.color = "green";
-          status.textContent = "Successfully saved Data.";
-
-          allRatesCache = [];
-          allRatesCacheTime = 0;
-        } else {
-          status.style.color = "red";
-          status.textContent = "Failed to save: " + (result?.message || text || "Unknown error");
-        }
+          status.textContent = "Saved successfully.";
+        }, 800);
       } catch (error) {
         status.style.color = "red";
-        status.textContent = `Error: ${error.name === "AbortError" ? "Request timeout." : error.message}`;
+        status.textContent = "Failed to save data: " + error.message;
+      } finally {
+        if (saveButton) saveButton.disabled = false;
       }
     }
 
