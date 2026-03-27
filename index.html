@@ -128,7 +128,8 @@
       width: 100%;
     }
 
-    .input-line {
+    .input-line,
+    .select-line {
       border: none;
       border-bottom: 1px solid #000;
       min-width: 0;
@@ -143,7 +144,8 @@
     }
 
     .input-line.medium,
-    .input-line.long {
+    .input-line.long,
+    .select-line.long {
       min-width: 0;
       width: 100%;
       max-width: 100%;
@@ -386,7 +388,7 @@
     <button type="button" onclick="window.print()">Print Details</button>
   </div>
 
-  <div class="status" id="status"></div>
+  
 
   <div class="page" id="formPage">
     <div class="header-wrap">
@@ -404,7 +406,21 @@
 
     <div class="info-row">
       <label style="width:100%;">Research/Capstone Project Proposal Title:
-        <input class="input-line long" id="title" type="text" required />
+        <select class="select-line long" id="title" required>
+          <option value="">-- Select Project Title --</option>
+          <option value="A WEB-BASED GIS-ENABLED SMART CAMPUS WAYFINDING SYSTEM FOR SLSU-TO WITH DUAL-MODE NAVIGATION, VOICE-DRIVEN WAYFINDING, EVENT-AWARE MAPPING, ROUTE OPTIMIZATION, AND HAZARD ALERTS">
+            A WEB-BASED GIS-ENABLED SMART CAMPUS WAYFINDING SYSTEM FOR SLSU-TO WITH DUAL-MODE NAVIGATION, VOICE-DRIVEN WAYFINDING, EVENT-AWARE MAPPING, ROUTE OPTIMIZATION, AND HAZARD ALERTS
+          </option>
+          <option value="Development of an AI-Powered Academic Assistant for Presentation Generation, Content Summarization, and Quiz Creation">
+            Development of an AI-Powered Academic Assistant for Presentation Generation, Content Summarization, and Quiz Creation
+          </option>
+          <option value="AI-Powered Career Preparation and Job Recommendation System
+with Voice-Based Interview Simulation
+">
+            AI-Powered Career Preparation and Job Recommendation System
+with Voice-Based Interview Simulation
+          </option>
+        </select>
       </label>
     </div>
 
@@ -522,7 +538,7 @@
 
     <div class="section-label">General Comments</div>
     <textarea id="generalComments" required></textarea>
-
+<div class="status" id="status"></div>
     <div style="margin-top: 16px; text-align:center;">
       <button
         type="button"
@@ -984,7 +1000,7 @@
     function fillSample() {
       document.getElementById("evaluator").value = "Dr. Juan Dela Cruz";
       document.getElementById("signature").value = "Signed";
-      document.getElementById("title").value = "Smart Attendance Monitoring System";
+      document.getElementById("title").value = "AI-Powered Academic Assistant with Summarization, Note-Taking, and Quiz Generation";
       document.getElementById("generalComments").value = "Good presentation with clear organization.";
       autoFillDateTime();
 
