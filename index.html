@@ -5,372 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research/Capstone Oral Presentation Form</title>
   <style>
-    :root {
-      --dark: #222;
-      --line: #333;
-      --light: #f7f7f7;
-    }
+:root{color-scheme:dark;--bg:#080e1c;--panel:#101b2d;--field:#0b1424;--line:#2a3b53;--text:#ecf4ff;--muted:#a9bad0;--cyan:#62e5ed;--violet:#a6a0ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:28px 22px 48px;background:radial-gradient(ellipse at 10% 0%,#10334b 0,transparent 45%),radial-gradient(ellipse at 100% 30%,#211d42 0,transparent 45%),var(--bg);color:var(--text);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select,textarea{font:inherit}button,input,select,textarea,a{-webkit-tap-highlight-color:transparent}button{min-height:48px;border:1px solid var(--line);padding:10px 18px;border-radius:12px;color:var(--text);background:#17263c;cursor:pointer;font-weight:600;touch-action:manipulation;transition:background .15s,border-color .15s}button:hover{background:#20344c;border-color:var(--cyan)}button:disabled{opacity:.45;cursor:not-allowed}:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.app-brand,.toolbar,.status,.page{width:100%;max-width:1320px;margin-inline:auto}.app-brand{display:flex;align-items:center;gap:12px;margin-bottom:22px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.brand-mark{display:grid;place-items:center;width:40px;height:40px;border:1px solid #62e5ed66;border-radius:12px;color:var(--cyan);background:#143040;font-size:22px}.app-brand small{margin-left:auto;color:var(--muted);letter-spacing:.04em;font-weight:500}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}.toolbar button{flex:0 1 auto}#formToolbar button:last-child{margin-left:auto;border-color:#62e5ed66;color:var(--cyan)}
+.page{padding:28px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,#132138e8,#0f1728f5);box-shadow:0 24px 70px #0005;min-width:0}.header-wrap{padding:12px 18px;margin-bottom:28px;background:#fff;border-radius:14px}.header-image{width:100%;height:auto;display:block}.footer-wrap{margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}.footer-image{display:block;width:220px;max-width:100%;height:auto;background:#fff;border-radius:8px;padding:8px}.eyebrow{margin:0 0 8px;color:var(--cyan);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.16em}h1{max-width:850px;margin:0 0 12px;font-size:clamp(24px,3.1vw,40px);line-height:1.2;font-weight:700;letter-spacing:-.035em}.page-subtitle{color:var(--muted);margin:0 0 28px}
+.info-row{display:flex;flex-wrap:wrap;gap:18px;margin:18px 0}.info-row label{display:block;flex:1 1 180px;min-width:0;color:var(--muted);font-size:13px;font-weight:600}.input-line,.select-line,textarea,.display-box{display:block;width:100%;min-width:0;max-width:100%;margin-top:8px;padding:12px 14px;color:var(--text);border:1px solid #3a4b63;border-radius:11px;background:var(--field);font-size:16px;line-height:1.5;font-weight:400}.input-line,.select-line{min-height:50px}input[readonly]{color:var(--muted);background:#152136}.select-line{text-overflow:ellipsis}.selected-project{margin:8px 0 0;color:var(--muted);font-size:13px;overflow-wrap:anywhere}.selected-project:empty{display:none}.section-label{display:block;color:var(--text);font-size:18px;font-weight:650;margin:30px 0 14px}.section-label::before{content:"";display:inline-block;width:4px;height:16px;margin-right:10px;border-radius:3px;background:linear-gradient(var(--cyan),var(--violet));vertical-align:-2px}
+.score-progress{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin:8px 0 12px}.score-progress strong{color:var(--cyan);font-variant-numeric:tabular-nums}progress{display:block;width:100%;height:5px;border:0;border-radius:20px;background:#24324a;accent-color:var(--cyan);margin:0 0 20px}progress::-webkit-progress-bar{background:#24324a;border-radius:20px}progress::-webkit-progress-value{background:linear-gradient(90deg,var(--cyan),var(--violet));border-radius:20px}
+table{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;font-size:14px}th,td{padding:14px 9px;border-bottom:1px solid var(--line);text-align:center;vertical-align:middle;overflow-wrap:anywhere}th{color:#cce2f8;background:#1c2c44;font-weight:600;font-size:13px;line-height:1.45}th:first-child{border-radius:12px 0 0 0}th:last-child{border-radius:0 12px 0 0}td.left{text-align:left;color:#c7d5e6}tbody tr:nth-child(even){background:#15223970}tbody tr:hover{background:#1c2d4470}td.member-name{font-size:12px;color:var(--muted)}input[type=number]{width:100%;max-width:82px;min-height:50px;border:1px solid #465c77;border-radius:10px;background:#0a1426;color:var(--text);text-align:center;padding:8px 4px;font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}input[type=number]:focus{border-color:var(--cyan);background:#112a3c}td[id^=totalMember],#overallGroupScore{color:var(--cyan);font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}#evaluationTable tbody tr:last-child,#detailsEvaluationTable tbody tr:last-child{background:#183442}
+textarea{min-height:140px;resize:vertical}.display-box{min-height:110px;white-space:pre-wrap;overflow-wrap:anywhere}.save-area{margin-top:22px;display:flex;justify-content:flex-end}.primary-button{min-width:240px;border:0;color:#07202b;background:linear-gradient(110deg,#67e8ec,#a7b7ff);box-shadow:0 6px 24px #62e5ed18}.primary-button:hover{background:linear-gradient(110deg,#9cf4f4,#c3ccff)}.status{margin-bottom:18px;padding:14px 18px;background:#101e32;border:1px solid var(--line);border-radius:12px;overflow-wrap:anywhere;color:var(--text)!important}.status:empty{display:none}.status[style*="red"]{color:#ffb9bd!important;border-color:#8c444e}.status[style*="green"]{color:#9ef2cf!important;border-color:#2e705b}.hidden{display:none!important}.member-controls,.member-navigation{display:none}.table-wrap{margin-top:20px;overflow-x:auto;border-radius:12px}.rates-table{min-width:1050px}.rates-table th:nth-child(6){width:24%}.rates-table th:first-child{width:4%}.rates-table button{min-width:70px;color:var(--cyan)}.connection-note{color:var(--muted);font-size:13px}
+@media screen and (max-width:900px){body{padding:18px 12px 32px}.app-brand{margin-bottom:16px;letter-spacing:.1em}.app-brand small{display:none}.page{padding:20px 16px;border-radius:18px}.toolbar{display:grid;grid-template-columns:1fr 1fr;gap:8px}.toolbar button{padding:10px 8px;font-size:13px}#formToolbar button:last-child{margin-left:0}.header-wrap{padding:8px;margin-bottom:24px}.info-row{gap:14px}.info-row label{flex-basis:calc(50% - 14px)}.info-row label:first-child,.info-row label:last-child{flex-basis:100%}.member-controls{display:block;position:sticky;top:8px;z-index:2;background:#17283ff5;border:1px solid #5adce16b;border-radius:14px;padding:12px;margin:16px 0;box-shadow:0 12px 28px #0004}.member-controls label{color:var(--cyan);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}.member-controls select{margin-top:6px}.mobile-ready{display:block}.mobile-ready thead,.mobile-ready tbody>tr:first-child{display:none}.mobile-ready tbody{display:grid;gap:10px}.mobile-ready tbody tr{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;padding:12px;background:#111e32}.mobile-ready td{display:none;border:0;padding:0}.mobile-ready td:first-child{display:block;flex:1;padding-right:14px;font-size:14px}.mobile-ready td.is-active,.mobile-ready td[colspan]{display:block;flex:0 0 78px;text-align:center}.mobile-ready input[type=number]{max-width:none;min-height:54px;font-size:20px}.member-navigation{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 24px}.member-navigation button{font-size:14px}.member-navigation button:last-child{color:var(--cyan);border-color:#62e5ed66}.save-area{position:sticky;bottom:10px;z-index:1}.primary-button{width:100%;min-width:0;min-height:54px;box-shadow:0 8px 24px #0006}.rates-table{min-width:0;display:block}.rates-table thead{display:none}.rates-table tbody{display:grid;gap:16px}.rates-table tr{display:block;border:1px solid var(--line);border-radius:14px;padding:12px}.rates-table td{display:grid;grid-template-columns:105px minmax(0,1fr);text-align:left;gap:10px;padding:9px 0;font-size:14px}.rates-table td::before{content:attr(data-label);color:var(--muted);font-size:12px;font-weight:600}.rates-table td[colspan]{display:block}.rates-table td:last-child{border:0}.rates-table td:last-child::before,.rates-table td[colspan]::before{display:none}.rates-table td:last-child{display:block}.rates-table button{width:100%}}
+.project-title-group{width:100%;min-width:0;break-inside:avoid}.project-title-label{margin:0;color:var(--muted);font-size:13px;font-weight:600}.fixed-project-title{margin-bottom:0;white-space:normal;overflow-wrap:anywhere}
+@media print{.project-title-label{color:#222;font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{:root{color-scheme:light}@page{size:A4 landscape;margin:10mm}body{background:white;color:#111;padding:0;font:11px/1.35 Arial,sans-serif}.app-brand,.toolbar,.status,.member-controls,.member-navigation,.score-progress,progress,.save-area,.eyebrow,.selected-project,.connection-note{display:none!important}.page{max-width:none;border:0;border-radius:0;padding:0;background:white;box-shadow:none}.header-wrap{max-width:750px;padding:0;margin:0 auto 10px}h1{font-size:18px;max-width:none;text-align:center;margin:10px 0}.page-subtitle{color:#333;text-align:center;margin-bottom:12px}.info-row{gap:10px;margin:8px 0}.info-row label{color:#222;font-size:11px}.input-line,.select-line,textarea,.display-box,input[type=number],input[readonly]{color:#111;background:white;border:1px solid #aaa;font-size:11px;padding:4px;min-height:24px;border-radius:0}.section-label{margin:12px 0 6px;font-size:13px;color:#111}.section-label::before{display:none}table{font-size:11px;border-collapse:collapse}th,td{border:1px solid #999;padding:6px;color:#111!important}th{background:#f1f1f1;font-size:11px;border-radius:0!important}tr{break-inside:avoid;background:white!important}td[id^=totalMember],#overallGroupScore{font-size:13px}input[type=number]{max-width:65px;font-size:12px;appearance:textfield}input::-webkit-inner-spin-button{display:none}.footer-wrap{margin-top:10px;padding-top:6px;border:0}.footer-image{width:180px;padding:0}.rates-table{min-width:0}}
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-    }
-
-    body {
-      padding: 12px;
-      font-family: "Times New Roman", serif;
-      color: var(--dark);
-      background: #ffffff;
-    }
-
-    .toolbar,
-    .status,
-    .page {
-      width: 100%;
-      max-width: 1400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .toolbar {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-
-    button {
-      padding: 10px 14px;
-      border: 1px solid #bbb;
-      background: rgb(1, 198, 252);
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 14px;
-      border-radius: 6px;
-      min-height: 42px;
-      flex: 1 1 180px;
-    }
-
-    button:hover {
-      background: #f3f3f3;
-    }
-
-    .status {
-      margin-bottom: 12px;
-      font-size: 14px;
-      min-height: 18px;
-      font-weight: bold;
-      word-break: break-word;
-    }
-
-    .page {
-      border: 1px solid #ddd;
-      padding: 16px;
-      background: #fff;
-    }
-
-    .header-image {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .footer-image {
-      width: 100%;
-      max-width: 220px;
-      height: auto;
-      display: block;
-    }
-
-    .header-wrap {
-      margin-bottom: 16px;
-    }
-
-    .footer-wrap {
-      margin-top: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 18px;
-      margin: 16px 0;
-      letter-spacing: 0.2px;
-      line-height: 1.3;
-    }
-
-    .page-subtitle {
-      text-align: center;
-      margin-top: -6px;
-      margin-bottom: 20px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .info-row {
-      margin: 8px 0;
-      font-size: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 14px;
-      align-items: center;
-    }
-
-    .info-row label {
-      display: block;
-      width: 100%;
-    }
-
-    .input-line,
-    .select-line {
-      border: none;
-      border-bottom: 1px solid #000;
-      min-width: 0;
-      width: 100%;
-      font: inherit;
-      background: transparent;
-      outline: none;
-      padding: 4px;
-      display: inline-block;
-      min-height: 24px;
-      word-break: break-word;
-    }
-
-    .input-line.medium,
-    .input-line.long,
-    .select-line.long {
-      min-width: 0;
-      width: 100%;
-      max-width: 100%;
-    }
-
-    .section-label {
-      margin: 18px 0 8px;
-      font-size: 15px;
-      font-weight: bold;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 8px;
-      font-size: 12px;
-      table-layout: fixed;
-    }
-
-    th,
-    td {
-      border: 1px solid var(--line);
-      padding: 8px 4px;
-      vertical-align: middle;
-      text-align: center;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-
-    th {
-      background: var(--light);
-    }
-
-    td.left {
-      text-align: left;
-      vertical-align: top;
-    }
-
-    td.member-name {
-      font-weight: bold;
-      font-size: 12px;
-    }
-
-    input[type="number"] {
-      width: 100%;
-      max-width: 64px;
-      padding: 4px;
-      font: inherit;
-      text-align: center;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 120px;
-      font: inherit;
-      padding: 10px;
-      border: 1px solid #aaa;
-      resize: vertical;
-    }
-
-    .display-box {
-      border: 1px solid #aaa;
-      min-height: 120px;
-      font: inherit;
-      padding: 10px;
-      white-space: pre-wrap;
-      text-align: left;
-      word-break: break-word;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .table-wrap {
-      width: 100%;
-      overflow: hidden;
-      margin-top: 12px;
-    }
-
-    .rates-table {
-      width: 100%;
-      table-layout: fixed;
-    }
-
-    .rates-table th,
-    .rates-table td {
-      white-space: normal;
-      font-size: 12px;
-      word-break: break-word;
-    }
-
-    .rates-table td.wrap {
-      white-space: normal;
-      min-width: 0;
-    }
-
-    .rates-table button {
-      width: 100%;
-      min-width: unset;
-      flex: unset;
-    }
-
-    @media (max-width: 768px) {
-      #evaluationTable th,
-      #evaluationTable td,
-      #detailsEvaluationTable th,
-      #detailsEvaluationTable td {
-        padding: 6px 3px;
-        font-size: 11px;
-      }
-
-      #evaluationTable th:first-child,
-      #evaluationTable td:first-child,
-      #detailsEvaluationTable th:first-child,
-      #detailsEvaluationTable td:first-child {
-        width: 28%;
-      }
-
-      input[type="number"] {
-        max-width: 52px;
-        font-size: 11px;
-        padding: 3px;
-      }
-
-      td.member-name {
-        font-size: 11px;
-      }
-    }
-
-    @media (min-width: 640px) {
-      body {
-        padding: 18px;
-      }
-
-      h1 {
-        font-size: 20px;
-      }
-
-      .page-subtitle,
-      .info-row,
-      .section-label {
-        font-size: 15px;
-      }
-
-      table {
-        font-size: 13px;
-      }
-
-      .rates-table th,
-      .rates-table td {
-        font-size: 13px;
-      }
-    }
-
-    @media (min-width: 900px) {
-      body {
-        padding: 24px;
-      }
-
-      .page {
-        padding: 22px 24px 30px;
-      }
-
-      h1 {
-        font-size: 22px;
-        margin: 20px 0 20px;
-        letter-spacing: 0.4px;
-      }
-
-      .page-subtitle {
-        font-size: 16px;
-      }
-
-      .info-row {
-        font-size: 15px;
-      }
-
-      table {
-        font-size: 14px;
-      }
-
-      .rates-table th,
-      .rates-table td {
-        font-size: 14px;
-      }
-
-      td.member-name {
-        font-size: 13px;
-      }
-
-      .footer-image {
-        width: 25%;
-        max-width: 280px;
-      }
-
-      input[type="number"] {
-        max-width: 70px;
-      }
-    }
-
-    @media print {
-      html,
-      body {
-        overflow: visible;
-      }
-
-      body {
-        padding: 0;
-      }
-
-      .toolbar,
-      .status {
-        display: none;
-      }
-
-      .page {
-        width: 100%;
-        border: none;
-        padding: 12px 18px 20px;
-      }
-    }
   </style>
 </head>
 <body>
+  <div class="app-brand"><span class="brand-mark" aria-hidden="true">◎</span> Evaluation Form <small>Research / Capstone</small></div>
+  <div class="status" id="status" role="status" aria-live="polite"></div>
   <div class="toolbar" id="formToolbar">
     <button type="button" onclick="window.print()">Print Form</button>
     <button type="button" onclick="fillSample()">Fill Sample Data</button>
@@ -395,7 +49,9 @@
       <img src="header.png" alt="Header" class="header-image" />
     </div>
 
-    <h1>RESEARCH/CAPSTONE ORAL PRESENTATION FORM</h1>
+    <p class="eyebrow">Research / Capstone</p>
+    <h1>Oral presentation evaluation</h1>
+    <p class="page-subtitle">6 presenters · 7 criteria · 100 points per presenter</p>
 
     <div class="info-row">
       <label>Evaluator: <input class="input-line medium" id="evaluator" type="text" required /></label>
@@ -405,28 +61,19 @@
     </div>
 
     <div class="info-row">
-      <label style="width:100%;">Research/Capstone Project Proposal Title:
-        <select class="select-line long" id="title" required>
-          <option value="">-- Select Project Title --</option>
-          <option value="A WEB-BASED GIS-ENABLED SMART CAMPUS WAYFINDING SYSTEM FOR SLSU-TO WITH DUAL-MODE NAVIGATION, VOICE-DRIVEN WAYFINDING, EVENT-AWARE MAPPING, ROUTE OPTIMIZATION, AND HAZARD ALERTS">
-            A WEB-BASED GIS-ENABLED SMART CAMPUS WAYFINDING SYSTEM FOR SLSU-TO WITH DUAL-MODE NAVIGATION, VOICE-DRIVEN WAYFINDING, EVENT-AWARE MAPPING, ROUTE OPTIMIZATION, AND HAZARD ALERTS
-          </option>
-          <option value="Development of an AI-Powered Academic Assistant for Presentation Generation, Content Summarization, and Quiz Creation">
-            Development of an AI-Powered Academic Assistant for Presentation Generation, Content Summarization, and Quiz Creation
-          </option>
-          <option value="AI-Powered Career Preparation and Job Recommendation System
-with Voice-Based Interview Simulation
-">
-            AI-Powered Career Preparation and Job Recommendation System
-with Voice-Based Interview Simulation
-          </option>
-        </select>
-      </label>
+      <div class="project-title-group">
+        <p class="project-title-label" id="projectTitleLabel">Research/Capstone Project Proposal Title:</p>
+        <p class="input-line fixed-project-title" aria-labelledby="projectTitleLabel">An Intelligent GIS-Based Smart Campus Navigation System with Context-Aware Route Optimization and Hazard Alerts for SLSU-TO</p>
+        <input type="hidden" id="title" value="An Intelligent GIS-Based Smart Campus Navigation System with Context-Aware Route Optimization and Hazard Alerts for SLSU-TO">
+      </div>
     </div>
 
-    <div class="section-label">Group Members Name</div>
+    <div class="section-label">Evaluate presenters</div>
+    <div class="score-progress"><span id="scoreProgressText">0 of 42 scores entered</span><span>Group average <strong id="groupScoreSummary">0.00 / 100</strong></span></div>
+    <progress id="scoreProgress" value="0" max="42" aria-label="Scoring progress"></progress>
+    <div class="member-controls"><label for="memberSelect">Presenter to evaluate</label><select id="memberSelect" class="select-line" onchange="selectMember(this.value)"></select></div>
 
-    <table id="evaluationTable">
+    <table id="evaluationTable" aria-label="Presentation scores">
       <thead>
         <tr>
           <th style="width: 24%;">Items Evaluated</th>
@@ -451,72 +98,72 @@ with Voice-Based Interview Simulation
 
         <tr>
           <td class="left">Overall organization (1 – 20)</td>
-          <td><input id="overallOrganization1" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="overallOrganization2" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="overallOrganization3" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="overallOrganization4" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="overallOrganization5" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="overallOrganization6" type="number" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization1" type="number" inputmode="numeric" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization2" type="number" inputmode="numeric" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization3" type="number" inputmode="numeric" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization4" type="number" inputmode="numeric" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization5" type="number" inputmode="numeric" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="overallOrganization6" type="number" inputmode="numeric" min="1" max="20" required oninput="handleScoreInput(this)" /></td>
         </tr>
 
         <tr>
           <td class="left">Preparedness (1 – 15)</td>
-          <td><input id="preparedness1" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="preparedness2" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="preparedness3" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="preparedness4" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="preparedness5" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="preparedness6" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness1" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness2" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness3" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness4" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness5" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="preparedness6" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
         </tr>
 
         <tr>
           <td class="left">Visual aids quality/effect (1 – 15)</td>
-          <td><input id="visualAids1" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="visualAids2" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="visualAids3" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="visualAids4" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="visualAids5" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="visualAids6" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids1" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids2" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids3" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids4" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids5" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="visualAids6" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
         </tr>
 
         <tr>
           <td class="left">Technical content (1 – 15)</td>
-          <td><input id="technicalContent1" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="technicalContent2" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="technicalContent3" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="technicalContent4" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="technicalContent5" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="technicalContent6" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent1" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent2" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent3" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent4" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent5" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="technicalContent6" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
         </tr>
 
         <tr>
           <td class="left">Delivery (1 – 15)</td>
-          <td><input id="delivery1" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="delivery2" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="delivery3" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="delivery4" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="delivery5" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="delivery6" type="number" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery1" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery2" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery3" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery4" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery5" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="delivery6" type="number" inputmode="numeric" min="1" max="15" required oninput="handleScoreInput(this)" /></td>
         </tr>
 
         <tr>
           <td class="left">Handling of questions (1 – 10)</td>
-          <td><input id="handlingQuestions1" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="handlingQuestions2" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="handlingQuestions3" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="handlingQuestions4" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="handlingQuestions5" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="handlingQuestions6" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions1" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions2" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions3" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions4" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions5" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="handlingQuestions6" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
         </tr>
 
         <tr>
           <td class="left">Effective use of time (1 – 10)</td>
-          <td><input id="effectiveTime1" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="effectiveTime2" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="effectiveTime3" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="effectiveTime4" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="effectiveTime5" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
-          <td><input id="effectiveTime6" type="number" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime1" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime2" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime3" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime4" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime5" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
+          <td><input id="effectiveTime6" type="number" inputmode="numeric" min="1" max="10" required oninput="handleScoreInput(this)" /></td>
         </tr>
 
         <tr>
@@ -536,16 +183,17 @@ with Voice-Based Interview Simulation
       </tbody>
     </table>
 
-    <div class="section-label">General Comments</div>
-    <textarea id="generalComments" required></textarea>
-<div class="status" id="status"></div>
-    <div style="margin-top: 16px; text-align:center;">
+    <div class="member-navigation"><button id="previousMember" type="button" onclick="stepMember(-1)">← Previous presenter</button><button id="nextMember" type="button" onclick="stepMember(1)">Next presenter →</button></div>
+    <label class="section-label" for="generalComments">General comments</label>
+    <textarea id="generalComments" placeholder="Share strengths and suggestions for improvement…" required></textarea>
+
+    <div class="save-area">
       <button
         type="button"
         onclick="submitToGoogleSheet()"
-        style="background-color: #4CAF50; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer;"
+        class="primary-button"
       >
-        SAVE DATA
+        Save evaluation
       </button>
     </div>
 
@@ -559,8 +207,8 @@ with Voice-Based Interview Simulation
       <img src="header.png" alt="Header" class="header-image" />
     </div>
 
-    <h1>ALL ORAL PRESENTATION EVALUATIONS</h1>
-    <div class="page-subtitle">Saved Data</div>
+    <p class="eyebrow">Evaluation records</p><h1>All evaluations</h1>
+    <p class="page-subtitle">Saved evaluations</p>
 
     <div class="table-wrap">
       <table class="rates-table">
@@ -595,7 +243,9 @@ with Voice-Based Interview Simulation
       <img src="header.png" alt="Header" class="header-image" />
     </div>
 
-    <h1>RESEARCH/CAPSTONE ORAL PRESENTATION FORM</h1>
+    <p class="eyebrow">Research / Capstone</p>
+    <h1>Oral presentation evaluation</h1>
+    <p class="page-subtitle">6 presenters · 7 criteria · 100 points per presenter</p>
 
     <div class="info-row">
       <label>Evaluator: <span class="input-line medium" id="detailEvaluator"></span></label>
@@ -610,7 +260,8 @@ with Voice-Based Interview Simulation
       </label>
     </div>
 
-    <div class="section-label">Group Members Name</div>
+    <div class="section-label">Presenter scores</div>
+    <div class="member-controls"><label for="detailMemberSelect">Presenter</label><select id="detailMemberSelect" class="select-line" onchange="selectMember(this.value, true)"></select></div>
 
     <table id="detailsEvaluationTable">
       <thead>
@@ -636,6 +287,7 @@ with Voice-Based Interview Simulation
   </div>
 
   <script>
+    const FIXED_PROJECT_TITLE = "An Intelligent GIS-Based Smart Campus Navigation System with Context-Aware Route Optimization and Hazard Alerts for SLSU-TO";
     const GOOGLE_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwq7urmhOmsOEtOXPUMWJCortUhlAtVZ2tLaVrs74f0_bcwRg_tFDTQUUjl29_3yZs/exec";
 
     const fixedMembers = [
@@ -725,6 +377,7 @@ with Voice-Based Interview Simulation
 
       const overallAverage = (grandTotal / 6).toFixed(2);
       document.getElementById("overallGroupScore").textContent = overallAverage;
+      if (presentationReady) refreshPresentation();
     }
 
     function getGroupMembersJson() {
@@ -813,7 +466,7 @@ with Voice-Based Interview Simulation
         time: document.getElementById("time").value.trim(),
         date: document.getElementById("date").value,
         signature: document.getElementById("signature").value.trim(),
-        title: document.getElementById("title").value.trim(),
+        title: FIXED_PROJECT_TITLE,
         groupMembersJson: getGroupMembersJson(),
         scoresJson: getScoresJson(),
         overallGroupScore: Number(document.getElementById("overallGroupScore").textContent || 0),
@@ -970,9 +623,10 @@ with Voice-Based Interview Simulation
     }
 
     function clearForm() {
+      if (presentationReady) selectMember(1);
       document.getElementById("evaluator").value = "";
       document.getElementById("signature").value = "";
-      document.getElementById("title").value = "";
+      document.getElementById("title").value = FIXED_PROJECT_TITLE;
       document.getElementById("generalComments").value = "";
       document.getElementById("status").textContent = "";
       document.getElementById("status").style.color = "";
@@ -1000,7 +654,7 @@ with Voice-Based Interview Simulation
     function fillSample() {
       document.getElementById("evaluator").value = "Dr. Juan Dela Cruz";
       document.getElementById("signature").value = "Signed";
-      document.getElementById("title").value = "AI-Powered Academic Assistant with Summarization, Note-Taking, and Quiz Generation";
+      document.getElementById("title").value = FIXED_PROJECT_TITLE;
       document.getElementById("generalComments").value = "Good presentation with clear organization.";
       autoFillDateTime();
 
@@ -1194,8 +848,65 @@ with Voice-Based Interview Simulation
       }
     }
 
+
+// Keep every original input in place. Mobile navigation changes only its visibility.
+let presentationReady = false;
+function selectMember(value, details = false) {
+  const index = Math.min(6, Math.max(1, Number(value) || 1));
+  const table = document.getElementById(details ? 'detailsEvaluationTable' : 'evaluationTable');
+  const select = document.getElementById(details ? 'detailMemberSelect' : 'memberSelect');
+  select.value = String(index);
+  table.querySelectorAll('tr').forEach(row => {
+    Array.from(row.children).forEach((cell, column) => cell.classList.toggle('is-active', column === index));
+  });
+  table.classList.add('mobile-ready');
+  if (!details) {
+    document.getElementById('previousMember').disabled = index === 1;
+    document.getElementById('nextMember').disabled = index === 6;
+  }
+}
+function stepMember(offset) {
+  selectMember(Number(document.getElementById('memberSelect').value) + offset);
+  document.querySelector('.member-controls').scrollIntoView({block:'start'});
+}
+function refreshPresentation() {
+  const inputs = Array.from(document.querySelectorAll('#evaluationTable input[type="number"]'));
+  const count = inputs.filter(input => input.value !== '').length;
+  document.getElementById('scoreProgress').value = count;
+  document.getElementById('scoreProgressText').textContent = count + ' of 42 scores entered';
+  document.getElementById('groupScoreSummary').textContent = document.getElementById('overallGroupScore').textContent + ' / 100';
+  fixedMembers.forEach((name, index) => {
+    const completed = inputs.filter(input => input.id.endsWith(String(index + 1)) && input.value !== '').length;
+    document.getElementById('memberSelect').options[index].textContent = name + ' · ' + completed + '/7';
+  });
+}
+function initializePresentation() {
+  ['memberSelect','detailMemberSelect'].forEach(id => {
+    const select = document.getElementById(id);
+    fixedMembers.forEach((name,index) => select.add(new Option(name,String(index + 1))));
+  });
+  document.querySelectorAll('#evaluationTable input[type="number"]').forEach(input => {
+    const label = input.closest('tr').firstElementChild.textContent.trim();
+    const member = fixedMembers[Number(input.id.match(/\d+$/)[0]) - 1];
+    input.setAttribute('aria-label',member + ': ' + label);
+    input.setAttribute('placeholder','—');
+  });
+  selectMember(1);
+  selectMember(1,true);
+  new MutationObserver(() => {
+    const headers = Array.from(document.querySelectorAll('.rates-table th'),cell => cell.textContent.trim());
+    document.querySelectorAll('#ratesTableBody tr').forEach(row => Array.from(row.cells).forEach((cell,index) => cell.dataset.label = headers[index] || ''));
+  }).observe(document.getElementById('ratesTableBody'),{childList:true});
+  new MutationObserver(() => selectMember(document.getElementById('detailMemberSelect').value,true))
+    .observe(document.getElementById('detailsScoresBody'),{childList:true});
+  presentationReady = true;
+  refreshPresentation();
+}
+
+    document.getElementById("title").value = FIXED_PROJECT_TITLE;
     autoFillDateTime();
     updateTotals();
+    initializePresentation();
   </script>
 </body>
 </html>
